@@ -3,6 +3,7 @@ module.exports = {
     mount: {
         public: { url: '/', static: true },
         src: { url: '/dist' },
+        'node_modules/@shoelace-style/shoelace/dist/assets': { url: '/shoelace/assets', static: true }
     },
     plugins: ['@snowpack/plugin-svelte', '@snowpack/plugin-dotenv'],
     routes: [],
@@ -24,7 +25,7 @@ module.exports = {
     buildOptions: {
         /* ... */
         clean: true,
-        out: "dist"
+        out: "dist",
     },
     exclude: [
         "**/*.{fs,fsproj}",

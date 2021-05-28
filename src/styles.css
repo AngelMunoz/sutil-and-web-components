@@ -45,5 +45,7 @@ button {
 @media (prefers-color-scheme: dark) {
   :root {
     --su-background-color: #2f2f2f;
+    --sl-color-gray-700: var(--su-color);
+    --sl-color-primary-500: var(--su-color);
   }
 }
