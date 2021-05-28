@@ -12,46 +12,54 @@ let view (initial: int option) =
   // you need to use observables to allow the rendering system react to these changes
   let store = Store.make (initial)
 
-  Html.article [
-    class' "counter"
-    Html.header [
-      text "A Simple Counter Component Example"
-    ]
-    Html.p [
-      bindFragment store
-      <| fun count -> text $"Count: {count}"
-    ]
-    Html.aside [
-      // .> creates an observable from the result of the function
-      // useful for value transformations/computations
-      bindFragment (store .> fun num -> num * num)
-      <| fun sqCount -> text $"Square Count: {sqCount}"
-    ]
-    Html.footer [
-      Html.button [
-        text "Increment"
-        onClick
-          (fun _ ->
-            // |-> maps a function to obtain the value without the store wrapper
-            (store |-> fun count -> count + 1)
-            |> Store.set store)
-          []
+  Html.custom (
+    "sl-card",
+    [ class' "counter"
+      Html.header [
+        Attr.custom ("slot", "header")
+        text "A Simple Counter Component Example"
       ]
-      Html.button [
-        text "Reset"
-        onClick (fun _ -> Store.set store initial) []
+      Html.p [
+        bindFragment store
+        <| fun count -> text $"Count: {count}"
       ]
-      Html.button [
-        text "Decrement"
-        onClick
-          (fun _ ->
-            // |-> maps a function to obtain the value without the store wrapper
-            (store |-> fun count -> count - 1)
-            |> Store.set store)
-          []
+      Html.aside [
+        // .> creates an observable from the result of the function
+        // useful for value transformations/computations
+        bindFragment (store .> fun num -> num * num)
+        <| fun sqCount -> text $"Square Count: {sqCount}"
       ]
-    ]
-  ]
+      Html.footer [
+        Html.custom (
+          "sl-icon-button",
+          [ Attr.name "plus"
+            Attr.custom ("label", "Increment")
+            onClick
+              (fun _ ->
+                // |-> maps a function to obtain the value without the store wrapper
+                (store |-> fun count -> count + 1)
+                |> Store.set store)
+              [] ]
+        )
+        Html.custom (
+          "sl-icon-button",
+          [ Attr.name "arrow-counterclockwise"
+            Attr.custom ("label", "Reset")
+            onClick (fun _ -> Store.set store initial) [] ]
+        )
+        Html.custom (
+          "sl-icon-button",
+          [ Attr.name "dash"
+            Attr.custom ("label", "Decrement")
+            onClick
+              (fun _ ->
+                // |-> maps a function to obtain the value without the store wrapper
+                (store |-> fun count -> count - 1)
+                |> Store.set store)
+              [] ]
+        )
+      ] ]
+  )
   |> withStyle [
        rule
          "article.counter"
@@ -65,6 +73,7 @@ let view (initial: int option) =
             """
            )
            Css.custom ("justify-items", "center") ]
+       rule "sl-icon-button" [ Css.fontSize (Feliz.length.em 1.62) ]
        rule "header" [ Css.gridArea "header" ]
        rule "p" [ Css.gridArea "p" ]
        rule "aside" [ Css.gridArea "aside" ]

@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Types.fs" />
+    <Compile Include="Components/Alert.fs" />
     <Compile Include="Components/Skeleton.fs" />
     <Compile Include="Components/Counter.fs" />
     <Compile Include="Pages/Home.fs" />

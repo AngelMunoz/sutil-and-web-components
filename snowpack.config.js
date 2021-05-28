@@ -25,7 +25,7 @@ module.exports = {
     buildOptions: {
         /* ... */
         clean: true,
-        out: "dist",
+        out: "dist"
     },
     exclude: [
         "**/*.{fs,fsproj}",

@@ -10,6 +10,12 @@ importSideEffects "./styles.css"
 importDefault "@shoelace-style/shoelace/dist/components/button/button.js"
 |> ignore
 
+importDefault "@shoelace-style/shoelace/dist/components/alert/alert.js"
+|> ignore
+
+importDefault "@shoelace-style/shoelace/dist/components/card/card.js"
+|> ignore
+
 importDefault "@shoelace-style/shoelace/dist/components/skeleton/skeleton.js"
 |> ignore
 
@@ -27,6 +33,10 @@ importDefault
 |> ignore
 
 importDefault "@shoelace-style/shoelace/dist/components/dialog/dialog.js"
+|> ignore
+
+importDefault
+  "@shoelace-style/shoelace/dist/components/icon-button/icon-button.js"
 |> ignore
 
 [<ImportMember("@shoelace-style/shoelace/dist/utilities/base-path.js")>]

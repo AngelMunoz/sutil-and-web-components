@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@shoelace-style/shoelace': ^2.0.0-beta.41
+  '@shoelace-style/shoelace': 2.0.0-beta.40
   '@snowpack/plugin-dotenv': ~2.1.0
   '@snowpack/plugin-svelte': ~3.7.0
   rollup: ~2.50.2
@@ -10,7 +10,7 @@ specifiers:
   svelte-hmr: ~0.14.4
 
 dependencies:
-  '@shoelace-style/shoelace': 2.0.0-beta.41
+  '@shoelace-style/shoelace': 2.0.0-beta.40
   svelte: 3.38.2
 
 devDependencies:
@@ -84,8 +84,8 @@ packages:
     resolution: {integrity: sha512-Be+cahtZyI2dPKRm8EZSx3YJQ+jLvEcn3xzRP7tM4tqBnvd/eW/64Xh0iOf0t2w5P8iJKfdBbpVNE9naCaOf2g==}
     dev: false
 
-  /@shoelace-style/shoelace/2.0.0-beta.41:
-    resolution: {integrity: sha512-X7QkXmgwssfalEtoGPGA4eOK1V+xTv/+STazaAhY/tOsLK3RX7mqG6g59eIhq8kBihXcr/4lN/+Niwk5kCOfXw==}
+  /@shoelace-style/shoelace/2.0.0-beta.40:
+    resolution: {integrity: sha512-wZxW9ZFyxukb90okOhxH2eXmVHIZ9GQAjH5WArIi6OUCGNyBjH7UtJbb+QuFxmtyl8ligif0Hz40uZdMA+LUVA==}
     dependencies:
       '@popperjs/core': 2.9.2
       '@shoelace-style/animations': 1.1.0
