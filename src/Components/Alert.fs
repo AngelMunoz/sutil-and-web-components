@@ -13,7 +13,7 @@ type SlAlertProps =
     open': bool
     type': string option }
 
-let Alert (props: IStore<SlAlertProps>, content: NodeFactory seq) =
+let Alert (props: IStore<SlAlertProps>, content: SutilElement seq) =
   let closable = props .> (fun props -> props.closable)
 
   let duration =

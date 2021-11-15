@@ -1,6 +1,7 @@
 module Main
 
 open Fable.Core
+open Sutil
 open Sutil.DOM
 open Fable.Core.JsInterop
 
@@ -44,4 +45,4 @@ let setBasePath (path: string) : unit = jsNative
 
 setBasePath "shoelace"
 // Start the app
-App.view () |> mountElement "sutil-app"
+App.view () |> Program.mountElement "sutil-app"
