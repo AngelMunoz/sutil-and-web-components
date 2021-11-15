@@ -1,6 +1,6 @@
 ## Sutil Template for Elmish
 
-This is a Sutil (**Svelte**) application template which kind of shows a bit how you can* structure sutil applications and work with stores
+This is a Sutil application template which kind of shows a bit how you can* structure sutil applications and work with stores
 
 ## Check out these files
 
